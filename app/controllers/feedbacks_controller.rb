@@ -13,7 +13,7 @@ class FeedbacksController < ApplicationController
       flash[:notice] = 'Feedback added'
       redirect_to workshop_path(workshop)
     else
-      flash[:error] = "Feedback was not added: #{feedback.errors}"
+      flash[:error] = "Feedback was not added: #{feedback.errors.full_messages}"
       redirect_to new_workshop_feedback_path(workshop)
     end
   end

@@ -43,7 +43,7 @@
     <main class="mdl-layout__content">
       <div class="page-content">
         <% flash.each do |name, msg| -%>
-          <%= content_tag :div, msg, class: name %>
+          <%= content_tag :div, msg, class: "flash #{name}" %>
         <% end -%>
         <%= yield %>
       </div>

@@ -37,3 +37,22 @@ body {
 .demo-card-wide > .mdl-card__menu {
   color: #fff;
 }
+
+.flash {
+  max-width: 100%;
+  text-align: center;
+}
+.error {
+  background-color: rgba(241, 15, 15, 0.6);
+  height: 50px;
+}
+
+.notice {
+  background-color: rgba(102, 228, 102, 0.62);
+  height: 50px;
+}
+
+.danger {
+  background-color: rgba(255, 255, 52, 0.55);
+  height: 50px
+}
