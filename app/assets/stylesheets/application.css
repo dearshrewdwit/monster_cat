@@ -40,15 +40,15 @@ body {
   margin-top: 10%;
 }
 .demo-card-wide > .mdl-card__title {
-  height: 176px;
-  background: url('') center / cover;
+  height: 240px;
 }
+
 .demo-card-wide > .mdl-card__menu {
   color: #fff;
 }
 
 .demo-card-square-main.mdl-card {
-  width: 500px;
+  width: 550px;
   height: 140px;
   margin: auto;
   margin-top: 5%;
@@ -75,13 +75,27 @@ body {
   text-align: center;
 }
 
-.feedback-avatar {
+.sessions-avatar-image {
+  max-width: 35%;
+  float: left;
+}
+
+.feedback-avatar-image {
   max-width: 15%;
 }
 
 .flash {
   max-width: 100%;
   text-align: center;
+}
+
+.sessions-new {
+  background-color: rgba(243, 175, 18, 0.55);
+}
+
+.sessions-text {
+  float: left;
+  margin: 5%;
 }
 
 .error {

@@ -45,7 +45,7 @@ feature 'Workshops' do
     context 'Show' do
       scenario 'user can see workshop info' do
         expect(page).to have_content(workshop.name)
-        expect(page).to have_content(workshop.url)
+        expect(page).to have_content('view on github')
       end
 
       scenario 'user can see feedback' do
