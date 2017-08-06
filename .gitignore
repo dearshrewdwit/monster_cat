@@ -22,3 +22,4 @@
 
 # ignore secrets
 /config/secrets
+.env
