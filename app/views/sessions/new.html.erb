@@ -1,0 +1,18 @@
+<div class="demo-card-wide mdl-card mdl-shadow--2dp">
+  <div class="mdl-card__title">
+    <% if current_user.blank? %>
+      <h2 class="mdl-card__title-text">please sign in</h2>
+    <% else %>
+      <%= image_tag current_user.avatar_url, class: "mdl-layout-icon nav-cat-logo" %>
+      <p>Hi, <%= current_user.username %></p>
+      <p>Total Feedback given: <%= current_user.feedbacks.length %></p>
+    <% end %>
+  </div>
+  <div class="mdl-card__actions mdl-card--border">
+    <% if current_user.blank? %>
+      <%= link_to 'Sign In with Github', '/auth/github', class: "mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" %>
+    <% else %>
+      <p>Find a workshop to give feedback</p>
+    <% end %>
+  </div>
+</div>

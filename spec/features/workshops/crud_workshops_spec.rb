@@ -1,8 +1,13 @@
 require 'rails_helper'
 
 feature 'Workshops' do
+  let(:user) { create(:user) }
   let!(:workshop) { create(:workshop) }
-  before { visit('/workshops') }
+
+  before do
+    allow_any_instance_of(ApplicationController).to receive(:current_user) { user }
+    visit('/workshops')
+  end
 
   context 'Read' do
     scenario 'user can see all workshops and their info' do

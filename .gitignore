@@ -19,3 +19,6 @@
 /yarn-error.log
 
 .byebug_history
+
+# ignore secrets
+/config/secrets
