@@ -1,0 +1,5 @@
+<%= form_for @workshop do |f| %>
+  name: <%= f.text_field :name %><br />
+  url : <%= f.url_field :url %><br />
+  <%= f.submit %>
+<% end %>

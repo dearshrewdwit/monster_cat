@@ -1,0 +1,7 @@
+
+<span><%= @workshop.name %></span>
+<span><%= @workshop.url %></span>
+
+
+<%= link_to('Update', edit_workshop_path(@workshop)) %>
+<%= link_to('Delete', workshop_path(@workshop), method: :delete) %>

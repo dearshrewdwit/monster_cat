@@ -1,0 +1,6 @@
+<% @workshops.each do |workshop|  %>
+  <span><%= link_to(workshop.name, workshop_path(workshop)) %></span>
+  <span><%= link_to(workshop.url, workshop.url) %></span>
+<% end %>
+
+<%= link_to('Add Workshop', new_workshop_path) %>
