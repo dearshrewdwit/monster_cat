@@ -1,19 +1,20 @@
 class FeedbacksController < ApplicationController
+  before_action :authenticate_user!
+
   def new
     @workshop = workshop
     @feedback = Feedback.new
   end
 
   def create
-    binding.pry
-    feedback = Feedback.new(permitted_params.merge(workshop: workshop))
+    feedback = Feedback.new(permitted_params.merge(workshop: workshop, user: current_user))
     if feedback.valid?
       feedback.save
       flash[:notice] = 'Feedback added'
       redirect_to workshop_path(workshop)
     else
       flash[:error] = "Feedback was not added: #{feedback.errors}"
-      redirect_to new_workshop_feedback_path(feedback, workshop)
+      redirect_to new_workshop_feedback_path(workshop)
     end
   end
 

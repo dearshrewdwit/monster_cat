@@ -1,0 +1,4 @@
+<%= form_for [@workshop, @feedback] do |f| %>
+  feedback: <%= f.text_field :body %><br />
+  <%= f.submit 'Add Feedback' %>
+<% end %>
