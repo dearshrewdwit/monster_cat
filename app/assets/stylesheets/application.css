@@ -13,8 +13,17 @@
  *= require_tree .
  *= require_self
  */
+.mdl-layout__header {
+  background-color: rgba(218, 85, 75, 0.81);
+}
+
 body {
   background-color: #fdf9f3;
+}
+
+.feedback-body {
+  height: 200px;
+  overflow: scroll;
 }
 
 .nav-cat-logo {
@@ -38,15 +47,32 @@ body {
   color: #fff;
 }
 
-.demo-card-square.mdl-card {
-  width: 340px;
-  height: 340px;
+.demo-card-square-main.mdl-card {
+  width: 500px;
+  height: 140px;
   margin: auto;
   margin-top: 5%;
 }
+
+.demo-card-square-main > .mdl-card__title {
+  color: #fff;
+  background: url('') bottom right 15% no-repeat rgba(54, 154, 204, 0.97);
+}
+
+.demo-card-square.mdl-card {
+  width: 340px;
+  height: 340px;
+  margin: 2%;
+  float: left;
+}
+
 .demo-card-square > .mdl-card__title {
   color: #fff;
   background: url('') bottom right 15% no-repeat #46B6AC;
+}
+
+.feedback-avatar {
+  max-width: 15%;
 }
 
 .flash {

@@ -13,42 +13,40 @@
   </head>
 
   <body>
-    <!-- Always shows a header, even in smaller screens. -->
-  <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-    <header class="mdl-layout__header">
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
 
-      <div class="mdl-layout__header-row">
-        <%= image_tag "cat-logo.jpg", class: "mdl-layout-icon nav-cat-logo" %>
-        <!-- Title -->
-        <span class="mdl-layout-title nav-title">MonsterCat</span>
-        <!-- Add spacer, to align navigation to the right -->
-        <div class="mdl-layout-spacer"></div>
-        <!-- Navigation. We hide it in small screens. -->
-        <nav class="mdl-navigation mdl-layout--large-screen-only">
-          <% if current_user %>
-            <%= link_to('Sign out', signout_path, method: :delete, class: "mdl-navigation__link")%>
-          <% end %>
+      <header class="mdl-layout__header">
+        <div class="mdl-layout__header-row">
+          <%= image_tag "cat-logo.jpg", class: "mdl-layout-icon nav-cat-logo" %>
+          <span class="mdl-layout-title nav-title">MonsterCat</span>
+          <div class="mdl-layout-spacer"></div>
+          <nav class="mdl-navigation mdl-layout--large-screen-only">
+            <% if current_user %>
+              <%= link_to('Sign out', signout_path, method: :delete, class: "mdl-navigation__link")%>
+            <% end %>
+            <%= link_to('Home', root_path, class: "mdl-navigation__link") %>
+            <%= link_to('Workshops', workshops_path, class: "mdl-navigation__link") %>
+          </nav>
+        </div>
+      </header>
+
+      <div class="mdl-layout__drawer">
+        <span class="mdl-layout-title">MonsterCat</span>
+        <nav class="mdl-navigation">
           <%= link_to('Home', root_path, class: "mdl-navigation__link") %>
           <%= link_to('Workshops', workshops_path, class: "mdl-navigation__link") %>
         </nav>
       </div>
-    </header>
-    <div class="mdl-layout__drawer">
-      <span class="mdl-layout-title">MonsterCat</span>
-      <nav class="mdl-navigation">
-        <%= link_to('Home', root_path, class: "mdl-navigation__link") %>
-        <%= link_to('Workshops', workshops_path, class: "mdl-navigation__link") %>
-      </nav>
-    </div>
-    <main class="mdl-layout__content">
-      <div class="page-content">
-        <% flash.each do |name, msg| -%>
-          <%= content_tag :div, msg, class: "flash #{name}" %>
-        <% end -%>
-        <%= yield %>
-      </div>
-    </main>
-  </div>
 
+      <main class="mdl-layout__content">
+        <div class="page-content">
+          <% flash.each do |name, msg| -%>
+            <%= content_tag :div, msg, class: "flash #{name}" %>
+          <% end -%>
+          <%= yield %>
+        </div>
+      </main>
+
+    </div>
   </body>
 </html>
