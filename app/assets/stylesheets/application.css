@@ -38,10 +38,22 @@ body {
   color: #fff;
 }
 
+.demo-card-square.mdl-card {
+  width: 340px;
+  height: 340px;
+  margin: auto;
+  margin-top: 5%;
+}
+.demo-card-square > .mdl-card__title {
+  color: #fff;
+  background: url('') bottom right 15% no-repeat #46B6AC;
+}
+
 .flash {
   max-width: 100%;
   text-align: center;
 }
+
 .error {
   background-color: rgba(241, 15, 15, 0.6);
   height: 50px;
