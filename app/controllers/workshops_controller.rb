@@ -1,6 +1,6 @@
 class WorkshopsController < ApplicationController
   before_action :authenticate_user!
-  
+
   def index
     @workshops = Workshop.all
   end
@@ -16,7 +16,7 @@ class WorkshopsController < ApplicationController
       flash[:notice] = 'Workshop created'
       redirect_to workshop_path(workshop)
     else
-      flash[:error] = "Create unsuccessful: #{workshop.errors}"
+      flash[:error] = "Create unsuccessful: #{workshop.errors.full_messages}"
       redirect_to new_workshop_path(workshop)
     end
   end
@@ -37,7 +37,7 @@ class WorkshopsController < ApplicationController
       flash[:notice] = 'Workshop updated'
       redirect_to workshop_path(workshop)
     else
-      flash[:error] = "Update unsuccessful: #{workshop.errors}"
+      flash[:error] = "Update unsuccessful: #{workshop.errors.full_messages}"
       redirect_to edit_workshop_path(workshop)
     end
   end
@@ -46,7 +46,7 @@ class WorkshopsController < ApplicationController
     workshop = Workshop.find(params[:id])
     workshop.destroy
     if workshop.persisted?
-      flash[:error] = "Delete unsuccessful: #{workshop.errors}"
+      flash[:error] = "Delete unsuccessful: #{workshop.errors.full_messages}"
       redirect_to workshop_path(workshop)
     else
       flash[:notice] = 'Workshop deleted'
