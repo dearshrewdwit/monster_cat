@@ -2,6 +2,11 @@
 <span><%= @workshop.name %></span>
 <span><%= @workshop.url %></span>
 
+<% @workshop.feedbacks.each do |feedback|  %>
+  <span><%= feedback.body %> </span>
+<% end %>
+
 
 <%= link_to('Update', edit_workshop_path(@workshop)) %>
 <%= link_to('Delete', workshop_path(@workshop), method: :delete) %>
+<%= link_to('Add Feedback', new_workshop_feedback_path(@workshop)) %>
