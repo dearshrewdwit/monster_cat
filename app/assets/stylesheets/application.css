@@ -37,3 +37,14 @@ body {
 .demo-card-wide > .mdl-card__menu {
   color: #fff;
 }
+
+.demo-card-square.mdl-card {
+  width: 340px;
+  height: 340px;
+  margin: auto;
+  margin-top: 10%;
+}
+.demo-card-square > .mdl-card__title {
+  color: #fff;
+  background: url('') bottom right 15% no-repeat #46B6AC;
+}
