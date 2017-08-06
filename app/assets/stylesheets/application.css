@@ -13,3 +13,27 @@
  *= require_tree .
  *= require_self
  */
+body {
+  background-color: #fdf9f3;
+}
+
+.nav-cat-logo {
+  max-height: 80%;
+}
+
+.nav-title {
+  margin-left: 30px;
+}
+
+.demo-card-wide.mdl-card {
+  width: 512px;
+  margin: auto;
+  margin-top: 10%;
+}
+.demo-card-wide > .mdl-card__title {
+  height: 176px;
+  background: url('') center / cover;
+}
+.demo-card-wide > .mdl-card__menu {
+  color: #fff;
+}

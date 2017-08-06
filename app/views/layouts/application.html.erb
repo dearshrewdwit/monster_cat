@@ -2,6 +2,10 @@
 <html>
   <head>
     <title>MonsterCat</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -9,9 +13,42 @@
   </head>
 
   <body>
-    <% flash.each do |name, msg| -%>
-      <%= content_tag :div, msg, class: name %>
-    <% end -%>
-    <%= yield %>
+    <!-- Always shows a header, even in smaller screens. -->
+  <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+    <header class="mdl-layout__header">
+
+      <div class="mdl-layout__header-row">
+        <%= image_tag "cat-logo.jpg", class: "mdl-layout-icon nav-cat-logo" %>
+        <!-- Title -->
+        <span class="mdl-layout-title nav-title">MonsterCat</span>
+        <!-- Add spacer, to align navigation to the right -->
+        <div class="mdl-layout-spacer"></div>
+        <!-- Navigation. We hide it in small screens. -->
+        <nav class="mdl-navigation mdl-layout--large-screen-only">
+          <% if current_user %>
+            <%= link_to('Sign out', signout_path, method: :delete, class: "mdl-navigation__link")%>
+          <% end %>
+          <%= link_to('Home', root_path, class: "mdl-navigation__link") %>
+          <%= link_to('Workshops', workshops_path, class: "mdl-navigation__link") %>
+        </nav>
+      </div>
+    </header>
+    <div class="mdl-layout__drawer">
+      <span class="mdl-layout-title">MonsterCat</span>
+      <nav class="mdl-navigation">
+        <%= link_to('Home', root_path, class: "mdl-navigation__link") %>
+        <%= link_to('Workshops', workshops_path, class: "mdl-navigation__link") %>
+      </nav>
+    </div>
+    <main class="mdl-layout__content">
+      <div class="page-content">
+        <% flash.each do |name, msg| -%>
+          <%= content_tag :div, msg, class: name %>
+        <% end -%>
+        <%= yield %>
+      </div>
+    </main>
+  </div>
+
   </body>
 </html>
