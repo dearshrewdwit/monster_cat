@@ -7,6 +7,8 @@
   <div class="mdl-card__supporting-text">
     <%= form_for @workshop do |f| %>
       <%= f.text_field :name, placeholder: 'Workshop name', class: 'mdl-textfield__input' %>
+      <%= f.text_field :description, placeholder: 'a description', class: 'mdl-textfield__input' %>
+      <%= f.url_field :image_url, placeholder: 'image url', class: 'mdl-textfield__input' %>
       <%= f.url_field :url, placeholder: 'The github repo', class: 'mdl-textfield__input' %>
       <%= f.submit 'Create Workshop', class: 'mdl-card__actions mdl-card--border mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect' %>
     <% end %>

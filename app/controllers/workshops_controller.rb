@@ -57,6 +57,6 @@ class WorkshopsController < ApplicationController
   private
 
   def permitted_params
-    params.require(:workshop).permit(:name, :url)
+    params.require(:workshop).permit(:name, :url, :description, :image_url)
   end
 end

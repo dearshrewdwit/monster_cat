@@ -22,6 +22,7 @@ feature 'Workshops' do
         click_link('add workshop')
         fill_in :workshop_name, with: 'a test workshop'
         fill_in :workshop_url, with: 'www.test_url.com'
+        fill_in :workshop_description, with: 'a super duper test'
         click_button('Create Workshop')
         expect(page).to have_content('Workshop created')
         expect(page).to have_content('a test workshop')
