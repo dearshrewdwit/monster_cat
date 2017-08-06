@@ -2,7 +2,7 @@ require 'rails_helper'
 
 feature 'Workshops' do
   let(:user) { create(:user) }
-  let!(:workshop) { create(:workshop) }
+  let!(:workshop) { create(:workshop_with_feedback) }
 
   before do
     allow_any_instance_of(ApplicationController).to receive(:current_user) { user }
@@ -13,6 +13,10 @@ feature 'Workshops' do
     scenario 'user can see all workshops and their info' do
       expect(page).to have_content(workshop.name)
       expect(page).to have_content(workshop.url)
+    end
+
+    scenario 'user can see feedback' do
+      expect(page).to have_content(workshop.feedbacks.first.body)
     end
   end
 
