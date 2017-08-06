@@ -10,23 +10,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170805144506) do
+ActiveRecord::Schema.define(version: 20170806082647) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "feedbacks", force: :cascade do |t|
     t.bigint "workshop_id"
-    t.bigint "student_id"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["student_id"], name: "index_feedbacks_on_student_id"
+    t.index ["user_id"], name: "index_feedbacks_on_user_id"
     t.index ["workshop_id"], name: "index_feedbacks_on_workshop_id"
   end
 
   create_table "users", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "email"
+    t.string "username"
+    t.string "avatar_url"
+    t.integer "uid"
+    t.string "provider"
+    t.string "oauth_token"
   end
 
   create_table "workshops", force: :cascade do |t|
