@@ -13,13 +13,13 @@ feature 'Workshops' do
     context 'Read' do
       scenario 'user can see all workshops and their info' do
         expect(page).to have_content(workshop.name)
-        expect(page).to have_content(workshop.url)
+        expect(page).to have_content('view on github')
       end
     end
 
     context 'Create' do
       scenario 'user can add a workshop' do
-        click_link('Add Workshop')
+        click_link('add workshop')
         fill_in :workshop_name, with: 'a test workshop'
         fill_in :workshop_url, with: 'www.test_url.com'
         click_button('Create Workshop')
@@ -28,7 +28,7 @@ feature 'Workshops' do
       end
 
       scenario "user can't add a workshop" do
-        click_link('Add Workshop')
+        click_link('add workshop')
         fill_in :workshop_name, with: 'a'
         fill_in :workshop_url, with: 'www.test_url.com'
         click_button('Create Workshop')
