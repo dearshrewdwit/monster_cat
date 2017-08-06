@@ -22,6 +22,7 @@ feature 'Workshops' do
         click_link('add workshop')
         fill_in :workshop_name, with: 'a test workshop'
         fill_in :workshop_url, with: 'www.test_url.com'
+        fill_in :workshop_description, with: 'a super duper test'
         click_button('Create Workshop')
         expect(page).to have_content('Workshop created')
         expect(page).to have_content('a test workshop')
@@ -44,7 +45,7 @@ feature 'Workshops' do
     context 'Show' do
       scenario 'user can see workshop info' do
         expect(page).to have_content(workshop.name)
-        expect(page).to have_content(workshop.url)
+        expect(page).to have_content('view on github')
       end
 
       scenario 'user can see feedback' do

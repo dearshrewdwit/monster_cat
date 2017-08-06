@@ -7,7 +7,7 @@
       <h2 class="mdl-card__title-text"><%= link_to(workshop.name, workshop_path(workshop)) %></h2>
     </div>
     <div class="mdl-card__supporting-text">
-      This workshop is all about the understanding of polymorphic associations
+      <%= workshop.description %>
     </div>
     <div class="mdl-card__actions mdl-card--border">
       <%= link_to('Add Feedback', new_workshop_feedback_path(workshop), class: "mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect") %>
