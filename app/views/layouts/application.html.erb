@@ -24,12 +24,13 @@
             <% if current_user %>
               <%= link_to('Sign out', signout_path, method: :delete, class: "mdl-navigation__link")%>
             <% end %>
-            <%= link_to('Home', root_path, class: "mdl-navigation__link") %>
+
             <% if current_user && current_user.admin? %>
-              <%= link_to('Workshops', admin_workshops_path, class: "mdl-navigation__link") %>
-            <% else %>
-              <%= link_to('Workshops', workshops_path, class: "mdl-navigation__link") %>
+              <%= link_to('Admin Workshops', admin_workshops_path, class: "mdl-navigation__link") %>
             <% end %>
+
+            <%= link_to('Home', root_path, class: "mdl-navigation__link") %>
+            <%= link_to('Workshops', workshops_path, class: "mdl-navigation__link") %>
 
           </nav>
         </div>
