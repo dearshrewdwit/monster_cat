@@ -1,12 +1,5 @@
 Rails.application.routes.draw do
   root to: 'sessions#new'
-  # namespace :admin do
-    # resources :workshops
-  # end
-
-  resources :workshops do
-    resources :feedbacks
-  end
 
   get "/auth/:provider/callback", to: "sessions#create"
   get 'auth/failure', to: redirect('/')
@@ -14,4 +7,13 @@ Rails.application.routes.draw do
 
   resources :sessions, :path => '/sessions', :only => [:new, :create, :destroy]
 
+  resources :workshops, :path => '/workshops', :only => [:index, :show] do
+    resources :feedbacks
+  end
+
+  namespace :admin do
+    resources :workshops do
+      resources :feedbacks
+    end
+  end
 end

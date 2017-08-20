@@ -8,7 +8,8 @@
     </div>
   </div>
   <div class="mdl-card__supporting-text">
-    <%= link_to('Add Feedback', new_workshop_feedback_path(@workshop), class: "mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect") %>
+    <%= link_to('Update', edit_admin_workshop_path(@workshop), class: "mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect") %>
+    <%= link_to('Delete', admin_workshop_path(@workshop), method: :delete, class: "mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect") %>
     <%= link_to('view on github', @workshop.url, target: '_blank', class: "mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect")  %>
   </div>
 </div>
