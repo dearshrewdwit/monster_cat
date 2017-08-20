@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
     if user.valid?
       session[:user_id] = user.id
       flash[:notice] = "You are now signed in"
-      redirect_to workshops_path
+      redirect_to root_path
     end
   end
 
